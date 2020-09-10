@@ -1,0 +1,393 @@
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Audi Loyalty</title>
+    <meta name="ad.size" content="width=350, height=350">
+
+    <style>
+@font-face {
+    font-family: "AudiType-ExtendedBold";
+    src: url("https://cdn.flashtalking.com/108237/fonts/auditype-extendedbold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "AudiTypeScreen-Normal";
+    src: url("https://cdn.flashtalking.com/108237/fonts/AudiTypeScreenNormal.woff") format("woff");
+}
+
+
+div {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.main-July-cpo {
+    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    visibility: hidden;
+    background-color: #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.car-img {
+    position: absolute;
+    width: 350px;
+    height: 125px;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    border:0;
+}
+
+.bottom-text-image {
+    position: absolute;
+    width: 350px;
+    height: 225px;
+    top: 125px;
+    left: 0px;
+    z-index: 4;
+    border:0;
+}
+
+
+.audi-rings-logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 350px;
+  height: 110px;
+  z-index: 4;
+  border:0;
+}
+
+.banner-border {
+    position: absolute;
+    width: 348px;
+    height: 348px;
+    border: 1px solid #222;
+    pointer-events: none;
+    z-index: 8;
+    top: 0px;
+    left: 0px;
+}
+
+#overlaybtn{
+    z-index: 9;
+    width: 350px;
+    height: 30px;
+    top: 320px;
+    left: 0px;
+    position: absolute;
+    display: none;
+    border:0;
+}
+
+.overlayHit {
+    position: absolute;
+    width: 350px;
+    height: 30px;
+    top: 320px;
+    left: 0px;
+    opacity: 0;
+    display: none;
+    z-index: 10;
+}
+
+.exit {
+    position: absolute;
+    width: 350px;
+    height: 320px;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+#close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    background-image: url('https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA36576_Audi_August_West_Region_Banners/images/close.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/*====================================*/
+
+#overlay {
+    z-index: 20;
+    width: 350px;  
+    height: 350px;
+    background: #333333;
+    color: #fff;
+    top: 100%;
+    position: absolute;
+}
+#overlay_content {
+    position: absolute;
+    top:20px;
+    left:20px;
+    font-family: 'AudiTypeScreen-Normal';
+    -webkit-font-smoothing: antialiased;
+    width: 260px;
+    height: 320px;
+    z-index: 22;
+    font-size: 14px;
+    line-height:15pt;
+    overflow: auto;
+    position: absolute;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+#scrollbar-container {
+    background-color: #434343;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0px;
+    height: 250px;
+    width: 34px;
+    right: 18px;
+    top: 70px;
+    z-index: 999;
+    border-top: 8px solid #434343;
+    border-bottom: 8px solid #434343;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#scrollbar {
+    background-color: #a1a1a1;
+    pointer-events: none;
+    border-radius: 18px;
+    position: absolute;
+    width: 18px;
+    right: 8px;
+} 
+    </style>
+</head>
+
+<body>
+    <div id="main-July-cpo" class="main-July-cpo">
+            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA36576_Audi_August_West_Region_Banners/images/car_blue_etron_350x225_2x.png" alt="" class="car-img" id="carImage">
+            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA36576_Audi_August_West_Region_Banners/images/audi_rings_white.png" alt="" class="audi-rings-logo" id="audiRings">
+            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA36576_Audi_August_West_Region_Banners/images/bottom_text_etron_quattro.png" alt="" class="bottom-text-image" id="bottomTextImage">
+
+        <div class="banner-border"></div>
+        
+        <div id="exit" class="exit"></div>
+        
+        <div id="overlayHit" class="overlayHit"></div>
+        <img id="overlaybtn" src=""/>
+        <div id="overlay">
+               <div id="scrollbar-container">
+                <div id="scrollbar"></div>
+          </div>
+            <div id="close"></div>
+            <div id="overlay_content"></div>
+        </div>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    
+  <script type="text/javascript" charset="utf-8">
+  var checker = false,
+    images,
+    loadedImage = 0,
+    overlay = document.getElementById('overlay'),
+    overlay_content = document.getElementById('overlay_content'),
+    close           = document.getElementById('close'),
+    closeCheck      = false;
+
+var startTime;
+
+var clickTag = "https://www.audioffers.com/global-incentives/index.htm?offerType=filter-apr_filter-other";
+
+
+//Check the status of the richload
+var checkRL = function () {
+    // if (myFT.richloadsLoaded) {
+        clearInterval(startTime);
+        instantInit(); //once the rl was loaded call the instantInit
+    // }
+}
+
+//Check the status of the instant ads
+var checkIA = function () {
+    // if (myFT.instantAdsLoaded && myFT.richloadsLoaded) {
+        clearInterval(startTime);
+        textConstructor(); // once both the IA and RL were initialize, call the feedInitialize
+    // }
+}
+
+//initially load the rl
+function ftInit() {
+    // myFT.on("richload", function (e) {
+        startTime = setInterval(checkRL, 500);
+    // });
+}
+
+//this will load the instantads
+function instantInit() {
+    
+    startTime = setInterval(checkIA, 500);
+}
+
+function textConstructor() {
+    
+    document.getElementById("overlay_content").innerHTML = "*Closed end lease financing available through August 31st, 2020 for a new, unused 2019 e-tron quattro Premium Plus with automatic transmission, Metallic or Pearl Effect Paint, Driver Assistance plus package, Cold Weather package, and Towing package on approved credit to highly qualified customers by Audi Financial Services through participating dealerships. Monthly lease payment based on MSRP of $78,375 and destination charges less a suggested dealer contribution resulting in a capitalized cost of $57,582. Excludes tax, title, license, options, and dealer fees. Amount due at signing includes first month’s payment, customer down payment of $2,650, and acquisition fee of $895. Monthly payments total $25,156. Your payment will vary based on final negotiated price. At lease end, lessee responsible for disposition fee of $495, $0.25/mile in excess of 30,000 miles and excessive wear and use. Offer not valid in Puerto Rico. See your Audi dealer for details or, for general product information, call 1-800-FOR-AUDI. &copy;2020 Audi of America, Inc.";
+
+    preload();
+    generateScroll();
+}
+
+function overlayOpen(){
+    if (closeCheck == false) {
+        //CG - convert from ftComponent
+        close.addEventListener('click',overlayClose);
+        // myFT.applyButton(close,overlayClose);
+        closeCheck = true;
+    }
+
+    overlay.style.top = "0";
+    
+    var contents = document.getElementById("overlay_content");
+    var height = contents.clientHeight;
+    console.log("height is ",height);  
+
+}
+
+//===================================================================================
+
+            function generateScroll() {
+                var container = document.getElementById("scrollbar-container"),
+                    content = document.getElementById("overlay_content"),
+                    scroll = document.getElementById("scrollbar");
+
+                var isTargeted = false,
+                    isDown = false;
+
+                content.style.pointerEvents = "auto";
+                
+                var checkContainerHeight = container.clientHeight;
+                console.log("scrollBarContainerHeight: ",checkContainerHeight);
+                var checkContentHeight = content.clientHeight;
+                console.log("contentHeight: ",checkContentHeight);
+                var checkContentScrollHeight = content.scrollHeight;
+                console.log("contentScrollHeight: ",checkContentScrollHeight);
+                
+                console.log("scrollHeight: ",scroll);
+
+                content.addEventListener("scroll", function(e) {
+                    scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
+                    scroll.style.top = container.clientHeight * (content.scrollTop / content.scrollHeight) + "px";
+                });
+
+    var event = new CustomEvent("scroll");
+
+    window.addEventListener("resize", content.dispatchEvent.bind(content, event));
+    content.dispatchEvent(event);
+
+    container.addEventListener("mousedown", function (start) {
+        start.preventDefault();
+
+        if(start.pageY - container.getBoundingClientRect().top > container.getBoundingClientRect().height - scroll.getBoundingClientRect().height) {
+            scroll.style.top = (container.getBoundingClientRect().height - scroll.getBoundingClientRect().height) + "px";
+        } else {
+            scroll.style.top = (start.pageY - container.getBoundingClientRect().top) + "px";
+        }
+
+        var y = scroll.offsetTop;
+        var onMove = function (end) {
+            // clearTimeout(scrollTimer);
+            var delta = end.pageY - start.pageY;
+            scroll.style.top = Math.min(container.clientHeight - scroll.clientHeight, Math.max(0, y + delta)) + "px";
+            content.scrollTop = (content.scrollHeight * scroll.offsetTop / container.clientHeight);
+        };
+
+        container.addEventListener("click", onMove);
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener("mouseup", function () {
+        document.removeEventListener("mousemove", onMove);
+        });
+    });
+
+                 container.addEventListener("mousedown", function(e) {
+                     content.style.pointerEvents = "none";
+                     moveScrollbar(e);
+
+                     isTargeted = (e.target == container) ? true : false;
+                     isDown = true;
+                 });
+
+                 document.addEventListener("mouseup", function(e) {
+                     content.style.pointerEvents = "auto";
+                     isTargeted = false;
+                     isDown = false;
+                 });
+
+                 document.addEventListener("mousemove", function(e) {
+                     if (isDown == true && isTargeted == true) {
+                         moveScrollbar(e);
+                     }
+                 });
+
+                 function moveScrollbar(e) {
+                     if (((container.getBoundingClientRect().top - e.pageY) - parseFloat(window.getComputedStyle(container, null).getPropertyValue("margin-top"))) < 0) {
+                         if (e.pageY - container.getBoundingClientRect().top > container.getBoundingClientRect().height - scroll.getBoundingClientRect().height) {
+                             var y = (container.getBoundingClientRect().height - scroll.getBoundingClientRect().height);
+                         } else {
+                             var y = e.clientY - e.target.getBoundingClientRect().top;
+                         }
+                     } else {
+                         y = 0;
+                     }
+
+                     scroll.style.top = y + "px";
+                     content.scrollTop = (0, content.scrollHeight * (parseFloat(scroll.style.top) / container.getBoundingClientRect().height));
+                 }
+            }
+//===================================================================================
+
+function overlayClose(){  
+
+    overlay.style.top = "100%";
+}
+
+function preload() {
+    init();
+}
+
+function init() {
+    let main = document.querySelector(".main-July-cpo");
+    main.style.visibility = "visible";
+    exit.addEventListener('click', onBtnClick);
+    overlayHit.addEventListener('click', overlayOpen);
+    setTimeout(tweenAudiLoyalty, 3000);
+}
+
+function tweenAudiLoyalty() {
+    TweenMax.to([carImage, audiRings, bottomTextImage], 1, {autoAlpha:1, ease:Sine.easeInOut})
+    TweenMax.to(overlayHit, 0.6, {opacity: 1, display:'block'})      
+}
+
+//set the click on items
+function onBtnClick(e) {
+    //remove FT clickTag and use standard click-out
+    window.open(window.clickTag);
+
+}
+
+ftInit();
+  </script>
