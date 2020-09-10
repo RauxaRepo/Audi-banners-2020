@@ -18,13 +18,41 @@
     src: url("https://cdn.flashtalking.com/108237/fonts/AudiTypeScreenNormal.woff") format("woff");
 }
 
+* {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    mobile webkit -moz-tap-highlight-color: rgba(255, 255, 255, 0);
+    -ms-tap-highlight-color: rgba(255, 255, 255, 0);
+    tap-highlight-color: rgba(255, 255, 255, 0);
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 
 div {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
-.main-July-cpo {
+.main {
     margin: 0 auto;
     width: 350px;
     height: 350px;
@@ -41,7 +69,7 @@ div {
 .car-img {
     position: absolute;
     width: 350px;
-    height: 137px;
+    height: 110px;
     top: 0px;
     left: 0px;
     z-index: 1;
@@ -51,14 +79,22 @@ div {
 .bottom-text-image {
     position: absolute;
     width: 350px;
-    height: 350px;
-    top: -2px;
+    height: 240px;
+    top: 110px;
     left: 0px;
     z-index: 4;
     border:0;
-    opacity:1;
 }
 
+.disclaimer-text-image {
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    top: 325px;
+    left: 0px;
+    z-index: 5;
+    border:0;
+}
 
 .audi-rings-logo {
   position: absolute;
@@ -118,7 +154,7 @@ div {
     right: 12px;
     width: 46px;
     height: 46px;
-    background-image: url('https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/close.png');
+    background-image: url('https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_66mnth_350x350/images/close.png');
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -139,7 +175,6 @@ div {
     top:20px;
     left:20px;
     font-family: 'AudiTypeScreen-Normal';
-    -webkit-font-smoothing: antialiased;
     width: 260px;
     height: 320px;
     z-index: 22;
@@ -182,11 +217,11 @@ div {
     </style>
 </head>
 
-<body>
-    <div id="main-July-cpo" class="main-July-cpo">
-            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/cpo_cars_2x.jpg" alt="" class="car-img" id="carImage">
-            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/audi_rings_white.png" alt="" class="audi-rings-logo" id="audiRings">
-            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/bottom_text_cp_2x.png" alt="" class="bottom-text-image" id="bottomTextImage">
+<body onload="ftInit()">
+    <div id="main" class="main">
+            <img src="" alt="" class="car-img" id="carImage">
+            <img src="" alt="" class="audi-rings-logo" id="audiRings">
+            <img src="" alt="" class="bottom-text-image" id="bottomTextImage">
 
         <div class="banner-border"></div>
         
@@ -250,7 +285,7 @@ function instantInit() {
 
 function textConstructor() {
     
-    document.getElementById("overlay_content").innerHTML = "*1.99% APR, no down payment required, available on Certified pre-owned MY17-MY19 Audi models (excluding R8) financed by Audi Financial Services through participating dealers. Other amounts may be due at signing. Example: For 1.99% APR, monthly payment for every $1,000 you finance for 66 months is $16.01. Not all customers will qualify for credit approval or advertised APR. Offer ends 7/31/2020. Offer not valid in Puerto Rico. See your local, participating Audi dealer for details or, for general product information, call 1-800-FOR-AUDI. &copy;2020 Audi of America, Inc.";
+    document.getElementById("overlay_content").innerHTML = "*Offer available to highly qualified customers on new, unused 2019 Audi A4/S4, A4 Allroad, A5/S5 Coupe, A5/S5 Cabriolet, A5/S5 Sportback, A6 Sedan, or Audi Q7 financed by Audi Financial Services through participating dealers only. Example: For 0% APR, monthly payment for every $1,000 you finance for 72 months is $13.89. No down payment required. Other amounts may be due at signing. We will schedule your first payment exactly 60 days from the date of the contract. Not all customers will qualify for credit approval or advertised APR. Dealer sets actual price. Limited to two 0% APR offers per household. Not available for lease offers or business customers. **Audi of America, Inc. will pay current owners or lessees of a MY09 or newer Audi vehicle a $2,000 incentive toward the purchase of a new, unused 2019 Audi vehicle through participating dealers. One incentive per eligible VIN. Proof of ownership required. Incentive must be applied toward finance contract and is not redeemable for cash. Offer is non-transferable. Excludes rental car companies, and customers leasing from any fleet leasing companies. For both offers: Offers ends 05/31/20. Offer not valid in Puerto Rico. See your local, participating Audi dealer for details or, for general product information, call 1-800-FOR-AUDI. &copy;2020 Audi of America, Inc.";
 
     preload();
     generateScroll();
@@ -370,11 +405,31 @@ function overlayClose(){
 }
 
 function preload() {
-    init();
+    images = new Array(
+       'https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_A6_72mnth_350x350/images/a6_black_car.jpg',
+       'https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_A6_72mnth_350x350/images/audi_rings_white.png',
+       'https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_A6_72mnth_350x350/images/bottom_text_72.png',
+    );
+
+    for (var i = 0; i < images.length; i++) {
+        imageObj = new Image();
+        imageObj.src = images[i];
+        imageObj.addEventListener("load", iLoad, false);
+    }
+    console.log('Entering preload');
+}
+
+function iLoad() {
+    loadedImage++;
+    if (images.length == loadedImage) {
+        carImage.src = images[0];
+        audiRings.src = images[1];
+        bottomTextImage.src = images[2];
+        init();
+    }
 }
 
 function init() {
-    let main = document.querySelector(".main-July-cpo");
     main.style.visibility = "visible";
     exit.addEventListener('click', onBtnClick);
     overlayHit.addEventListener('click', overlayOpen);
@@ -390,10 +445,7 @@ function tweenAudiLoyalty() {
 function onBtnClick(e) {
     //remove FT clickTag and use standard click-out
     window.open(window.clickTag);
-
 }
-
-ftInit();
   </script>
 </body>
 

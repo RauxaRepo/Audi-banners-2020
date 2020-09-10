@@ -24,7 +24,7 @@ div {
     background-size: 100% 100%;
 }
 
-.main-July-cpo {
+.main-May-Loyalty {
     margin: 0 auto;
     width: 350px;
     height: 350px;
@@ -41,7 +41,7 @@ div {
 .car-img {
     position: absolute;
     width: 350px;
-    height: 137px;
+    height: 110px;
     top: 0px;
     left: 0px;
     z-index: 1;
@@ -51,14 +51,22 @@ div {
 .bottom-text-image {
     position: absolute;
     width: 350px;
-    height: 350px;
-    top: -2px;
+    height: 240px;
+    top: 110px;
     left: 0px;
     z-index: 4;
     border:0;
-    opacity:1;
 }
 
+.disclaimer-text-image {
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    top: 325px;
+    left: 0px;
+    z-index: 5;
+    border:0;
+}
 
 .audi-rings-logo {
   position: absolute;
@@ -118,7 +126,7 @@ div {
     right: 12px;
     width: 46px;
     height: 46px;
-    background-image: url('https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/close.png');
+    background-image: url('https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_66mnth_350x350/images/close.png');
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -183,10 +191,10 @@ div {
 </head>
 
 <body>
-    <div id="main-July-cpo" class="main-July-cpo">
-            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/cpo_cars_2x.jpg" alt="" class="car-img" id="carImage">
-            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/audi_rings_white.png" alt="" class="audi-rings-logo" id="audiRings">
-            <img src="https://s3-us-west-1.amazonaws.com/rauxa.email.campaign.assets/2020/Audi/AOA-36444_CPO_Offers_Julybanner/AOA36444_July_CPO_350x350_Banner/images/bottom_text_cp_2x.png" alt="" class="bottom-text-image" id="bottomTextImage">
+    <div id="main-May-Loyalty" class="main-May-Loyalty">
+            <img src="https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_A4_72mnth_350x350/images/a4_blue_car.jpg" alt="" class="car-img" id="carImage">
+            <img src="https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_A4_72mnth_350x350/images/audi_rings_white.png" alt="" class="audi-rings-logo" id="audiRings">
+            <img src="https://master.d34d6zaui9uisq.amplifyapp.com/May_Loyalty_A4_72mnth_350x350/images/bottom_text_72.png" alt="" class="bottom-text-image" id="bottomTextImage">
 
         <div class="banner-border"></div>
         
@@ -250,7 +258,7 @@ function instantInit() {
 
 function textConstructor() {
     
-    document.getElementById("overlay_content").innerHTML = "*1.99% APR, no down payment required, available on Certified pre-owned MY17-MY19 Audi models (excluding R8) financed by Audi Financial Services through participating dealers. Other amounts may be due at signing. Example: For 1.99% APR, monthly payment for every $1,000 you finance for 66 months is $16.01. Not all customers will qualify for credit approval or advertised APR. Offer ends 7/31/2020. Offer not valid in Puerto Rico. See your local, participating Audi dealer for details or, for general product information, call 1-800-FOR-AUDI. &copy;2020 Audi of America, Inc.";
+    document.getElementById("overlay_content").innerHTML = "*Offer available to highly qualified customers on new, unused 2019 Audi A4/S4, A4 Allroad, A5/S5 Coupe, A5/S5 Cabriolet, A5/S5 Sportback, A6 Sedan, or Audi Q7 financed by Audi Financial Services through participating dealers only. Example: For 0% APR, monthly payment for every $1,000 you finance for 72 months is $13.89. No down payment required. Other amounts may be due at signing. We will schedule your first payment exactly 60 days from the date of the contract. Not all customers will qualify for credit approval or advertised APR. Dealer sets actual price. Limited to two 0% APR offers per household. Not available for lease offers or business customers. **Audi of America, Inc. will pay current owners or lessees of a MY09 or newer Audi vehicle a $2,000 incentive toward the purchase of a new, unused 2019 Audi vehicle through participating dealers. One incentive per eligible VIN. Proof of ownership required. Incentive must be applied toward finance contract and is not redeemable for cash. Offer is non-transferable. Excludes rental car companies, and customers leasing from any fleet leasing companies. For both offers: Offers ends 05/31/20. Offer not valid in Puerto Rico. See your local, participating Audi dealer for details or, for general product information, call 1-800-FOR-AUDI. &copy;2020 Audi of America, Inc.";
 
     preload();
     generateScroll();
@@ -374,7 +382,7 @@ function preload() {
 }
 
 function init() {
-    let main = document.querySelector(".main-July-cpo");
+    let main = document.querySelector(".main-May-Loyalty");
     main.style.visibility = "visible";
     exit.addEventListener('click', onBtnClick);
     overlayHit.addEventListener('click', overlayOpen);
