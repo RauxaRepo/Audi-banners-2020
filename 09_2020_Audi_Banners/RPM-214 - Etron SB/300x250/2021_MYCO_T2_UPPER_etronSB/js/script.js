@@ -42,7 +42,9 @@ var outer = document.getElementById("outer"),
     inner_headline = inner.getElementsByClassName("headline")[0],
     inner_headlineText = inner.getElementsByClassName("headline")[0],
     mLock = document.getElementsByClassName("modelLockup")[0],
-    endFrame_headCont = inner.getElementsByClassName("efHeadline_container")[0];
+    endFrame_headCont = inner.getElementsByClassName("efHeadline_container")[0],
+    localCopy = document.getElementsByClassName("local-copy")[0];
+
 
 var hoverCheck = false,
     disclaimerOne = false,
@@ -442,6 +444,7 @@ function animateFrameThree(){
             // var mLock = document.createElement("img");
             mLock.src = "etronSB_MY21_3x2.png";
             replay.addEventListener("click", resetAll);
+            localCopy.src = "2021_AudietronSB_LC_300x250.png";
             // mLock.classList.add("modelLockup");
             // logo_holder.after(mLock);
             TweenMax.to(inner_headline, .63, {y:-125, ease:Power3.easeInOut, rotate:.01});
@@ -452,6 +455,7 @@ function animateFrameThree(){
                 cta.style.opacity = "1";
                 replay.style.display = "block";
                 replay.style.opacity = "1";
+                localCopy.style.opacity = "1";
 
 
                 }
@@ -523,6 +527,7 @@ function resetAll() {
             resetElement(cta);
             resetElement(inner_headline);
             resetElement(replay);
+            resetElement(localCopy);
             TweenMax.set(mLock, {opacity:0,x:179});
             resetElement(disclaimer);
             thirdFrame = false;
