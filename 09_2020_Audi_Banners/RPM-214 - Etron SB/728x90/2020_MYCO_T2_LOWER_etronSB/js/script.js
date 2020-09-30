@@ -40,7 +40,9 @@ var outer = document.getElementById("outer"),
     inner_headline = inner.getElementsByClassName("headline")[0],
     inner_headlineText = inner.getElementsByClassName("headline")[0],
     mLock = document.getElementsByClassName("modelLockup")[0],
-    endFrame_headCont = inner.getElementsByClassName("efHeadline_container")[0];
+    endFrame_headCont = inner.getElementsByClassName("efHeadline_container")[0],
+    localCopy = document.getElementsByClassName("local-copy")[0];
+
 
 var hoverCheck = false,
     disclaimerOne = false,
@@ -438,6 +440,7 @@ function animateFrameThree(){
             },"end");
             // var mLock = document.createElement("img");
             mLock.src = "etronSB_MY21_7x9.png";
+            localCopy.src = "2021_AudietronSB_LC_728x90.png";
             // mLock.classList.add("modelLockup");
 
             // logo_holder.after(mLock);
@@ -449,6 +452,7 @@ function animateFrameThree(){
                 cta.style.opacity = "1";
                 replay.style.display = "block";
                 replay.style.opacity = "1";
+                localCopy.style.opacity = "1";
 
                 replay.addEventListener("click", resetAll);
 
@@ -526,6 +530,7 @@ function resetAll() {
             // resetElement(mLock);
             resetElement(disclaimer);
             thirdFrame = false;
+            resetElement(localCopy);
 
             outer_backgroundOne.src = "2021_AudietronSB_Lower_F1_728x90.jpg";
             rebuildHeadline("<span style='font-size:1em'>Dare to</span>|<span style='font-size:1em'>be bold.</span>");
