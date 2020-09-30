@@ -375,6 +375,26 @@ div {
 }
 
 
+.local-copy {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  opacity: 0;
+
+  -webkit-transition-delay: .5s;
+  -moz-transition-delay: .5s;
+  -o-transition-delay: .5s;
+  transition-delay: .5s;
+  -webkit-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+
 .cta{
     font-size: 12px;
     font-family: 'audi-extendedbold', sans-serif;
