@@ -836,6 +836,12 @@ function startAnimation() {
         opacity: 1,
     }, 'transition2-=1');
 
+    tl.fromTo(F3_local_txt, 2, {
+        opacity: 0
+    }, {
+        opacity: 1,
+    }, 'transition2-=1');
+
     tl.fromTo(replay, 2, {
         pointerEvents: "none",
         opacity: 0
@@ -845,15 +851,6 @@ function startAnimation() {
     }, 'transition2-=1');
 
     tl.fromTo(F3_headline_txt, 0.5, {
-        opacity: 0,
-        y: 5
-    }, {
-        opacity: 1,
-        y: 0,
-        ease: Power4.easeInOut
-    }, '-=0.95');
-
-    tl.fromTo(F3_local_txt, 0.5, {
         opacity: 0,
         y: 5
     }, {
