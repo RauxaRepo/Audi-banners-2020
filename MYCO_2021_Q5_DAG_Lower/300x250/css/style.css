@@ -352,7 +352,7 @@ div {
     display: block;
     height: 250px;
     width: 300px;
-    top: -10px;
+    top: 0px;
     position: relative;
     left: 0px;
     -webkit-transform-style: preserve-3d;
@@ -389,7 +389,7 @@ div {
     font-size: 10px;
     font-family: 'audi-extendedbold', sans-serif;
     left: 15px;
-    top: 202px;
+    top: 207px;
     position: absolute;
     opacity: 0;
 
