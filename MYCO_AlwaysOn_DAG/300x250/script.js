@@ -31,7 +31,6 @@ var outer = document.getElementById("outer"),
     logo_img = document.getElementById("logo_img"),
     logo_text = document.getElementsByClassName("logo_text")[0],
     logo_holder = document.getElementsByClassName("logo")[0],
-    dag = document.getElementsByClassName("dag")[0],
     cta = document.getElementsByClassName("cta")[0],
     replay = document.getElementsByClassName("replay")[0],
     disclaimer = document.getElementsByClassName("disclaimer")[0],
@@ -281,16 +280,13 @@ function initializeUnit() {
 
     var logo_lockup = "<div style='text-align:left'>Audi<br>Q5 PHEV</div>";
     logo_text.innerHTML = logo_lockup.split("<br>")[0] + "<br><span style='font-size: 1.6em'>" + logo_lockup.split("<br>")[1] + "</span>";
-    dag.innerHTML = "DAG 30 character count copy here.";
     cta.innerHTML = "View inventory >";
     replay.innerHTML = "Replay";
 
 
 
 
-    if ("|#fff||||".split("|")[1] != "") s.innerHTML += ".dag { color: " + "|#b9b9b9||||".split("|")[1] + "; }\n\n";
     if ("|#fff||||15,223".split("|")[1] != "") s.innerHTML += ".cta { color: " + "|#fff||||15,223".split("|")[1] + "; }\n\n";
-    if ("|#fff||||".split("|")[5] != "") s.innerHTML += ".dag { left: " + "|#fff||||".split("|")[5].split(",")[0] + "px; top: " + "|#fff||||".split("|")[5].split(",")[1] + "px; }\n";
     if ("|#fff||||15,223".split("|")[5] != "") s.innerHTML += ".cta { left: " + "|#fff||||15,223".split("|")[5].split(",")[0] + "px; top: " + "|#fff||||15,223".split("|")[5].split(",")[1] + "px; }\n";
 
     document.getElementsByTagName("head")[0].appendChild(s);
@@ -451,7 +447,6 @@ function animateFrameThree(){
             TweenMax.to(inner_headline, .63, {y:-125, ease:Power3.easeInOut, rotate:.01});
             inner.classList.add('innerShadow');
             TweenMax.to(document.getElementsByClassName('headlineEnd')[0],.63,{y:-125, rotate:.01, ease: Power3.easeInOut}); 
-            TweenMax.set(dag, {opacity:1});
             TweenMax.to(inner, .63, {y:0, ease:Power3.easeInOut, rotate:.01, onComplete:function(){
                 TweenMax.to(mLock, .25, {x: -179, opacity:1, rotate:.01, ease: Expo.easeOut});
                 cta.style.opacity = "1";
@@ -526,7 +521,6 @@ function resetAll() {
         e.currentTarget.removeEventListener(e.type, f);
             resetElement(inner);
             resetElement(cta);
-            resetElement(dag);
             resetElement(inner_headline);
             resetElement(replay);
             TweenMax.set(mLock, {opacity:0,x:179});

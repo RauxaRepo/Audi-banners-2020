@@ -385,21 +385,6 @@ div {
     font-family: 'audi-extendedbold', sans-serif;
 }
 
-.dag {
-    font-size: 10px;
-    font-family: 'audi-extendedbold', sans-serif;
-    left: 15px;
-    top: 207px;
-    position: absolute;
-    opacity: 0;
-
-    -webkit-transition: opacity .5s ease-in-out;
-    -o-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-}
-
 .cta{
     font-size: 12px;
     font-family: 'audi-extendedbold', sans-serif;
