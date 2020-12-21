@@ -160,6 +160,8 @@ div {
     color: #fff;
     top: 100%;
     position: absolute;
+    border: 1px solid #222;
+    box-sizing: border-box;
 }
 #overlay_content {
     position: absolute;
@@ -276,7 +278,7 @@ function instantInit() {
 
 function textConstructor() {
     
-    document.getElementById("overlay_content").innerHTML = "*First lease payment paid by Audi of America up to $800 on a new, unused 2021 Audi Q3, up to $1000 on a new, unused 2021 Audi Q5/Q5 PHEV/SQ5 and up to $1,500 on a new, unused 2021 Audi Q7/SQ7, Q8/SQ8, e-tron and e-tron Sportback. At signing, customer responsible for any remaining first lease payment amount in excess of payment cap. Subject to credit approval by Audi Financial Services.  Offer not valid in Puerto Rico. See your Audi dealer for details or, for general product information, call 1- 800-FOR-AUDI. © 2021 Audi of America, Inc.";
+    document.getElementById("overlay_content").innerHTML = "*First lease payment paid by Audi of America up to $800 on a new, unused 2021 Audi Q3, up to $1000 on a new, unused 2021 Audi Q5/Q5 PHEV/SQ5 and up to $1,500 on a new, unused 2021 Audi Q7/SQ7, Q8/SQ8, e-tron and e-tron Sportback. At signing, customer responsible for any remaining first lease payment amount in excess of payment cap. Subject to credit approval by Audi Financial Services.  Offer not valid in Puerto Rico. See your Audi dealer for details or, for general product information, call 1- 800-FOR-AUDI.<br>© 2021 Audi of America, Inc.";
 
     preload();
     generateScroll();
@@ -311,11 +313,15 @@ function overlayOpen(){
                 var checkContainerHeight = container.clientHeight;
                 var checkContentHeight = content.clientHeight;
                 var checkContentScrollHeight = content.scrollHeight;
-                
-                content.addEventListener("scroll", function(e) {
+
+                if (container.clientHeight !== container.clientHeight * content.clientHeight / content.scrollHeight) {
+                  content.addEventListener("scroll", function(e) {
                     scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
                     scroll.style.top = container.clientHeight * (content.scrollTop / content.scrollHeight) + "px";
-                });
+                  });
+                } else {
+                  container.style.display = 'none';
+                }
 
     var event = new CustomEvent("scroll");
 
