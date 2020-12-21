@@ -294,8 +294,6 @@ function overlayOpen(){
     
     var contents = document.getElementById("overlay_content");
     var height = contents.clientHeight;
-    console.log("height is ",height);  
-
 }
 
 //===================================================================================
@@ -311,14 +309,9 @@ function overlayOpen(){
                 content.style.pointerEvents = "auto";
                 
                 var checkContainerHeight = container.clientHeight;
-                console.log("scrollBarContainerHeight: ",checkContainerHeight);
                 var checkContentHeight = content.clientHeight;
-                console.log("contentHeight: ",checkContentHeight);
                 var checkContentScrollHeight = content.scrollHeight;
-                console.log("contentScrollHeight: ",checkContentScrollHeight);
                 
-                console.log("scrollHeight: ",scroll);
-
                 content.addEventListener("scroll", function(e) {
                     scroll.style.height = container.clientHeight * content.clientHeight / content.scrollHeight + "px";
                     scroll.style.top = container.clientHeight * (content.scrollTop / content.scrollHeight) + "px";
@@ -397,9 +390,9 @@ function overlayClose(){
 
 function preload() {
     images = new Array(
-       './images/car_blue_generic.jpg',
-       './images/audi_rings_white.png',
-       './images/bottom_text_generic.png',
+       'images/generic.jpg',
+       'images/audi_rings_white.png',
+       'images/bottom_text_generic.png',
     );
 
     for (var i = 0; i < images.length; i++) {
@@ -407,7 +400,6 @@ function preload() {
         imageObj.src = images[i];
         imageObj.addEventListener("load", iLoad, false);
     }
-    console.log('Entering preload');
 }
 
 function iLoad() {
