@@ -42,6 +42,21 @@ div {
     background-repeat: no-repeat;
     background-size: contain;
 }
+.dag {
+  font-size: 10px;
+  font-family: 'audi-extendedbold', sans-serif;
+  left: 14px;
+  bottom: 110px;
+  position: absolute;
+  opacity: 0;
+  line-height: 1.2;
+
+  -webkit-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
 
 
 #main {
