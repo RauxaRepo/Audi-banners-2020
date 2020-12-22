@@ -41,7 +41,8 @@ var outer = document.getElementById("outer"),
     inner_headline = inner.getElementsByClassName("headline")[0],
     inner_headlineText = inner.getElementsByClassName("headline")[0],
     mLock = document.getElementsByClassName("modelLockup")[0],
-    endFrame_headCont = inner.getElementsByClassName("efHeadline_container")[0];
+    endFrame_headCont = inner.getElementsByClassName("efHeadline_container")[0],
+    dag = document.getElementsByClassName("dag")[0];
 
 var hoverCheck = false,
     disclaimerOne = false,
@@ -284,7 +285,9 @@ function initializeUnit() {
 
 
 
+    if ("|#fff||||".split("|")[1] != "") s.innerHTML += ".dag { color: " + "|#b9b9b9||||".split("|")[1] + "; }\n\n";
     if ("|#fff||||".split("|")[1] != "") s.innerHTML += ".cta { color: " + "|#fff||||".split("|")[1] + "; }\n\n";
+    if ("|#fff||||".split("|")[5] != "") s.innerHTML += ".dag { left: " + "|#fff||||".split("|")[5].split(",")[0] + "px; top: " + "|#fff||||".split("|")[5].split(",")[1] + "px; }\n";
     if ("|#fff||||".split("|")[5] != "") s.innerHTML += ".cta { left: " + "|#fff||||".split("|")[5].split(",")[0] + "px; top: " + "|#fff||||".split("|")[5].split(",")[1] + "px; }\n";
 
     document.getElementsByTagName("head")[0].appendChild(s);
@@ -451,6 +454,7 @@ function animateFrameThree(){
                 cta.style.opacity = "1";
                 replay.style.display = "block";
                 replay.style.opacity = "1";
+                TweenMax.set(dag, {opacity:1});
 
                 replay.addEventListener("click", resetAll);
 
@@ -524,6 +528,7 @@ function resetAll() {
             resetElement(cta);
             resetElement(inner_headline);
             resetElement(replay);
+            resetElement(dag);
             TweenMax.set(mLock,{x:285,opacity:0});
             resetElement(disclaimer);
             thirdFrame = false;
