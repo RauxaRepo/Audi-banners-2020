@@ -92,19 +92,23 @@ div {
 }
 
 .dag {
-  font-size: 10px;
-  font-family: 'audi-extendedbold', sans-serif;
-  left: 14px;
-  bottom: 75px;
+  left: 0;
+  top: 0;
   position: absolute;
   opacity: 0;
-  line-height: 1.2;
+  height: 600px;
+  width: 160px;
+  display: block;
+  text-align: left;
+}
 
-  -webkit-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
+.dag span {
+  position: absolute;
+  left: 14px;
+  bottom: 85px;
+  font-size: 10px;
+  font-family: 'audi-extendedbold', sans-serif;
+  line-height: 1.2;
 }
 
 #overlay {

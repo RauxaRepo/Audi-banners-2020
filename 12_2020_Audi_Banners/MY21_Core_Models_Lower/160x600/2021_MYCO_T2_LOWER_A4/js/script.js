@@ -453,12 +453,13 @@ function animateFrameThree(){
             TweenMax.to(inner_headline, .63, {y:-300, ease:Power3.easeInOut, rotate:.01});
             inner.classList.add('innerShadow');
             TweenMax.to(document.getElementsByClassName('headlineEnd')[0],.63,{y:-300, rotate:.01, ease: Power3.easeInOut});
-            TweenMax.to(inner, .63, {y:0, ease:Power3.easeInOut, rotate:.01, onComplete:function(){
+            TweenMax.to(dag, .63,{y: -300, opacity: 1, rotate:.01, ease: Power3.easeInOut});
+            TweenMax.to(inner, .63, {y:0, ease:Power3.easeInOut, rotate:.01,
+              onComplete:function(){
                 TweenMax.to(mLock, .25, {x: -148, opacity:1, rotate:.01, ease: Expo.easeOut});
                 cta.style.opacity = "1";
                 replay.style.display = "block";
                 replay.style.opacity = "1";
-                TweenMax.set(dag, {opacity:1});
                 }
             })
     },1370);
