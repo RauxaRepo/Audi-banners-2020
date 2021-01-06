@@ -446,8 +446,10 @@ function animateFrameThree(){
             // logo_holder.after(mLock);
             TweenMax.to(inner_headline, .63, {x:-364, ease:Power3.easeInOut, rotate:.01});
             inner.classList.add('innerShadow');
-            TweenMax.to(document.getElementsByClassName('headlineEnd')[0],.63,{x:-364, rotate:.01, ease: Power3.easeInOut}); 
-            TweenMax.to(inner, .63, {x:0, ease:Power3.easeInOut, rotate:.01, onComplete:function(){
+            TweenMax.to(document.getElementsByClassName('headlineEnd')[0],.63,{x:-364, rotate:.01, ease: Power3.easeInOut});   
+            TweenMax.to(dag, .63, {left: -364, rotate:.01, ease: Power3.easeInOut}); 
+            TweenMax.to(inner, .63, {x:0, ease:Power3.easeInOut, rotate:.01,
+              onComplete:function(){
                 TweenMax.to(mLock, .25, {x: -350, opacity:1, rotate:.01, ease: Expo.easeOut});
                 cta.style.opacity = "1";
                 replay.style.display = "block";
@@ -455,7 +457,6 @@ function animateFrameThree(){
                 TweenMax.set(dag, {opacity:1});
 
                 replay.addEventListener("click", resetAll);
-
                 }
             })
     },1370);

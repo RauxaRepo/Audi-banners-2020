@@ -448,6 +448,7 @@ function animateFrameThree(){
             TweenMax.to(inner_headline, .63, {y:-300, ease:Power3.easeInOut, rotate:.01});
             inner.classList.add('innerShadow');
             TweenMax.to(document.getElementsByClassName('headlineEnd')[0],.63,{y:-300, rotate:.01, ease: Power3.easeInOut}); 
+            TweenMax.to(dag, .63,{top: -300, rotate:.01, ease: Power3.easeInOut});   
             TweenMax.to(inner, .63, {y:0, ease:Power3.easeInOut, rotate:.01, onComplete:function(){
                 TweenMax.to(mLock, .25, {x: -285, opacity:1, rotate:.01, ease: Expo.easeOut});
                 // slideElement(document.getElementsByClassName('modelLockup')[0]);
