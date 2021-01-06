@@ -44,19 +44,23 @@ div {
 }
 
 .dag {
+  left: 0;
+  top: 0;
+  position: absolute;
+  opacity: 1;
+  height: 600px;
+  width: 300px;
+  display: block;
+  text-align: left;
+}
+
+.dag span {
+  position: absolute;
+  left: 20px;
+  bottom: 100px;
   font-size: 10px;
   font-family: 'audi-extendedbold', sans-serif;
-  left: 19px;
-  bottom: 100px;
-  position: absolute;
-  opacity: 0;
   line-height: 1.2;
-
-  -webkit-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
 }
 
 

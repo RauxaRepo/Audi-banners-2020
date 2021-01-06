@@ -43,19 +43,27 @@ div {
 }
 
 .dag {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 1;
+  height: 90px;
+  width: 728px;
+  display: block;
+  text-align: left;
+}
+
+.dag span {
+  position: absolute;
+  right: 12px;
+  bottom: 55px;
   font-size: 10px;
   font-family: 'audi-extendedbold', sans-serif;
-  bottom: 55px;
-  right: 12px;
-  position: absolute;
-  opacity: 0;
   line-height: 1.2;
-
-  -webkit-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
 }
 
 #main {
